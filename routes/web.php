@@ -26,6 +26,8 @@ Route::get('/', function () {
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/addToBasket/{id}', [HomeController::class, 'addToBasket'])->name('addToBasket')->middleware('auth');
+
 Auth::routes();
 
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
