@@ -15,21 +15,21 @@
                                     class="ficon feather icon-maximize"></i></a></li>
                     </ul>
                 </div>
-{{--                <ul class="nav navbar-nav float-right">--}}
-{{--                    <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link"--}}
-{{--                                                                   href="#" data-toggle="dropdown">--}}
-{{--                            <div class="user-nav d-sm-flex d-none"><span--}}
-{{--                                        class="user-name text-bold-600">{{$userr->getUser()->name .' '. $userr->getUser()->family}}</span></div>--}}
-{{--                            <span><img class="round" src="/panel/app-assets/images/portrait/small/avatar-s-11.jpg"--}}
-{{--                                       alt="avatar" height="40" width="40"></span></a>--}}
-{{--                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item"--}}
-{{--                                                                          href="{{route('updateUser',\Illuminate\Support\Facades\Auth::id())}}"><i--}}
-{{--                                        class="feather icon-user"></i> ویرایش پروفایل</a>--}}
-{{--                            <div class="dropdown-divider"></div>--}}
-{{--                            <a class="dropdown-item" href="{{ route('logout') }}"><i class="feather icon-power"></i> خروج</a>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
+                <ul class="nav navbar-nav float-right">
+                    <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link"
+                                                                   href="#" data-toggle="dropdown">
+                            <div class="user-nav d-sm-flex d-none"><span
+                                        class="user-name text-bold-600">{{$userr->getUser()->name .' '. $userr->getUser()->family}}</span></div>
+                            <span><img class="round" src="/panel/app-assets/images/portrait/small/avatar-s-11.jpg"
+                                       alt="avatar" height="40" width="40"></span></a>
+                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item"
+                                                                          href="{{route('updateUser',\Illuminate\Support\Facades\Auth::id())}}"><i
+                                        class="feather icon-user"></i> ویرایش پروفایل</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('logout') }}"><i class="feather icon-power"></i> خروج</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

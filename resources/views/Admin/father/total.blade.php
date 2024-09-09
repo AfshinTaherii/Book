@@ -70,7 +70,7 @@
 
 
 </head>
-<body class="vertical-layout vertical-menu-modern dark-layout 2-columnsnavbar-floating footer-static" data-open="click"
+<body class="vertical-layout vertical-menu-modern  2-columnsnavbar-floating footer-static" data-open="click"
       data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
 
 
