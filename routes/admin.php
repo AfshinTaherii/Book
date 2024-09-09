@@ -152,6 +152,8 @@ Route::group(['prefix' => 'admin'],function () {
         Route::get('/list', [SliderController::class, 'listt'])->name('listSlider');
         Route::get('/ajax', [SliderController::class, 'ajax'])->name('ajaxSlider');
         Route::get('/delete/{id}', [SliderController::class, 'delete'])->name('deleteSlider');
+        Route::get('/update/{id}', [SliderController::class, 'update'])->name('updateSlider');
+        Route::post('/update', [SliderController::class, 'storeUpdate'])->name('storeUpdateSlider');
     });
 
 

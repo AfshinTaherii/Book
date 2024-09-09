@@ -30,6 +30,7 @@
     <link rel="icon" type="/image/png" href="/Front/assets/img/favicon.png">
 </head>
 <body>
+
 <!-- Start Navbar Area -->
 <header id="header">
     <div class="crake-mobile-nav">
@@ -41,34 +42,107 @@
     <div class="crake-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <div class="collapse navbar-collapse mean-menu">
-                    <ul class="navbar-nav nav">
+                <a class="navbar-brand" href="index-7.html"><img src="/Front/assets/img/logo.png" alt="logo"></a>
+
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav ml-auto">
                         <li class="nav-item"><a href="#" class="nav-link">خانه</a>
                             <ul class="dropdown_menu">
-                                <li><a href="index.html">صفحه </a></li>
+                                <li><a href="index.html">صفحه لندینگ SaaS </a></li>
                             </ul>
                         </li>
 
-                        <li class="nav-item"><a href="#" class="nav-link">مجا زندگی</a>
+                        <li class="nav-item"><a href="#" class="nav-link active">صفحات</a>
                             <ul class="dropdown_menu">
-                                <li><a href="shop-1.html">مجا زندگی</a></li>
-                            </ul>
-                        </li>
+                                <li class="nav-item"><a href="#" class="nav-link active">درباره</a>
+                                    <ul class="dropdown_menu">
+                                        <li><a href="about-1.html" class="active">درباره ما 1</a></li>
+                                    </ul>
+                                </li>
 
+                                <li><a href="features.html">ویژگی ها</a></li>
 
-                        <li class="nav-item"><a href="contact-us.html" class="nav-link">تماس</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">تیم</a>
+                                    <ul class="dropdown_menu">
+                                        <li><a href="team-1.html">تیم 1</a></li>
+                                    </ul>
+                                </li>
 
-                        <li class="nav-item"><a href="#" class="nav-link">حساب کاربری</a>
-                            <ul class="dropdown_menu">
+                                <li class="nav-item"><a href="#" class="nav-link">قیمت</a>
+                                    <ul class="dropdown_menu">
+                                        <li><a href="pricing-1.html">قیمت 1</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a href="#" class="nav-link">نمونه کار</a>
+                                    <ul class="dropdown_menu">
+                                        <li><a href="project-1.html">نمونه کارها 2 ستون</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a href="#" class="nav-link">فروشگاه</a>
+                                    <ul class="dropdown_menu">
+                                        <li><a href="shop-1.html">فروشگاه 1</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a href="#" class="nav-link">بلاگ</a>
+                                    <ul class="dropdown_menu">
+                                        <li><a href="blog-1.html">بلاگ 1</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="">پروفایل</a></li>
                                 <li><a href="{{route('login')}}">ورود</a></li>
                                 <li><a href="{{route('register')}}">ثبت نام</a></li>
                             </ul>
                         </li>
+
+                        <li class="nav-item"><a href="#" class="nav-link">نمونه کار</a>
+                            <ul class="dropdown_menu">
+                                <li><a href="project-1.html">نمونه کارها 2 ستون</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item"><a href="#" class="nav-link">بلاگ</a>
+                            <ul class="dropdown_menu">
+                                <li><a href="blog-1.html">بلاگ 1</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item"><a href="#" class="nav-link">فروشگاه</a>
+                            <ul class="dropdown_menu">
+                                <li><a href="shop-1.html">فروشگاه 1</a></li>
+                                <li><a href="cart.html">سبد خرید</a></li>
+                                <li><a href="checkout.html">بررسی</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item"><a href="contact-us.html" class="nav-link">تماس</a></li>
                     </ul>
                 </div>
-                <a class="navbar-brand" href="index.html"><img src="/Front/assets/img/logo.png" alt="logo"></a>
+                <div class="mr-auto others-option">
+                    <ul class="navbar-nav">
+                        <li class="nav-item cart-wrapper">
+                            <a href="#">
+                                <i class="icofont-shopping-cart cart-icon"></i>
 
+                                <span>0</span>
+                            </a>
+                        </li>
+                        <li class="header-search-box">
+                            <a href="#header-search" title="Search">
+                                <i class="icofont-search-2"></i>
+                            </a>
+                        </li>
+                        <li data-toggle="modal" data-target="#myModal2">
+                            <div class="side-menu">
+                                <span class="bar-1"></span>
+                                <span class="bar-2"></span>
+                                <span class="bar-3"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </div>
