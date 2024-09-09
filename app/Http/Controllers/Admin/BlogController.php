@@ -149,3 +149,5 @@ class BlogController extends Controller
         return back()->with('success', true)->with('message', 'درخواست شما با موفقیت ثبت شد');
     }
 }
+
+
