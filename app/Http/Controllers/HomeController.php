@@ -42,7 +42,7 @@ class HomeController extends Controller
         $product = Product::query()->find($id);
         $pendingOrder = Order::query()->where('status', 'pending')->where('user_id', Auth::id())->first();
         if (!$pendingOrder) {
-            Order::query()->create([
+            $pendingOrder = Order::query()->create([
                 'user_id' => Auth::id(),
                 'total_price' => 0,
                 'status' => 'pending'
@@ -86,7 +86,7 @@ class HomeController extends Controller
                 $result = (object)[
                     'cover_image'=>$product->cover_image,
                     'titleFa'=>$product->titleFa,
-                    'priceBook'=>$product->offPercent ? $product->offPercent : $product->priceBook,
+                    'priceBook'=>$product->offPrice ? $product->offPrice : $product->priceBook,
                     'amount'=>$order->quantity,
                     'id'=>$order->id,
                     'totalPrice'=>$order->price,
@@ -108,12 +108,23 @@ class HomeController extends Controller
     {
         $ids = $request->id;
         $quantitys = $request->quantity;
+        $totalPrice = 0;
 
         foreach ($ids as $index=>$id) {
+            $item = OrderItem::query()->find($id);
+            $product = Product::query()->find($item?->product_id);
+            $bookPrice = $product->offPrice ? $product->offPrice : $product->priceBook;
             OrderItem::query()->where('id', $id)->update([
                 'quantity' => $quantitys[$index],
+                'price'=>$bookPrice*$quantitys[$index],
+            ]);
+            $totalPrice += $bookPrice*$quantitys[$index];
+
+            Order::query()->where('id', $item->order_id)->update([
+                'total_price'=>$totalPrice,
             ]);
         }
+
         return back()->with('success',true)->with('message','با موفقیت به روز رسانی شد');
     }
 }
