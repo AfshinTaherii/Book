@@ -37,11 +37,9 @@ class HomeController extends Controller
 
 
 
-    public function addToBasket($id): \Illuminate\Http\RedirectResponse
+    public function addToBasket($id)
     {
-
         $product = Product::query()->find($id);
-
         $pendingOrder = Order::query()->where('status', 'pending')->where('user_id', Auth::id())->first();
         if (!$pendingOrder) {
             Order::query()->create([
@@ -60,12 +58,17 @@ class HomeController extends Controller
                 'quantity' => 1,
                 'price' => $bookPrice,
             ]);
+            $pendingOrder->total_price = $bookPrice;
+            $pendingOrder->save();
         } else {
             $currentQuantity = $hasItem->quantity;
             $quantity = $currentQuantity + 1;
             $hasItem->quantity = $quantity;
             $hasItem->price = $bookPrice*$quantity;
             $hasItem->save();
+
+            $pendingOrder->total_price = $bookPrice*$quantity;
+            $pendingOrder->save();
         }
 
         return back()->with('success',true)->with('message',"با موفقیت به سید خرید اضافه شد");

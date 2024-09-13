@@ -114,8 +114,21 @@
                         <li class="nav-item cart-wrapper">
                             <a href="#">
                                 <i class="icofont-shopping-cart cart-icon"></i>
-
-                                <span>0</span>
+                                <span>
+                                    <?php
+                                        if (\Illuminate\Support\Facades\Auth::check()){
+                                            $pendengFactor = \App\Models\Admin\Order::query()->where('user_id',\Illuminate\Support\Facades\Auth::id())->where('status','pending')->first();
+                                            if ($pendengFactor){
+                                                $count =\App\Models\Admin\OrderItem::query()->where('order_id',$pendengFactor->id)->count();
+                                                echo $count;
+                                            }else{
+                                                echo 0;
+                                            }
+                                        }else{
+                                            echo 0;
+                                        }
+                                      ?>
+                                      </span>
                             </a>
                         </li>
                         <li class="header-search-box">
