@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1deb5ubuntu1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 13, 2024 at 01:27 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.17
+-- Host: localhost:3306
+-- Generation Time: Sep 13, 2024 at 01:38 PM
+-- Server version: 8.0.39-0ubuntu0.22.04.1
+-- PHP Version: 8.1.2-1ubuntu2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bookfair`
+-- Database: `book`
 --
 
 -- --------------------------------------------------------
@@ -28,13 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `addresses` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `mobile` varchar(255) NOT NULL,
-  `userId` bigint(20) UNSIGNED NOT NULL,
-  `provincesId` bigint(20) UNSIGNED NOT NULL,
-  `cityId` bigint(20) UNSIGNED NOT NULL,
-  `details` text DEFAULT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `userId` bigint UNSIGNED NOT NULL,
+  `provincesId` bigint UNSIGNED NOT NULL,
+  `cityId` bigint UNSIGNED NOT NULL,
+  `details` text COLLATE utf8mb4_unicode_ci,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -47,17 +47,17 @@ CREATE TABLE `addresses` (
 --
 
 CREATE TABLE `blogs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `titleFa` varchar(255) NOT NULL,
-  `titleEn` varchar(255) NOT NULL,
-  `slug` varchar(255) NOT NULL,
-  `seoDescription` text DEFAULT NULL,
-  `seoKeyboard` text DEFAULT NULL,
-  `image` varchar(255) NOT NULL,
-  `longDescriptionFa` longtext NOT NULL,
-  `longDescriptionEn` longtext NOT NULL,
-  `shortDescriptionFa` text NOT NULL,
-  `shortDescriptionEn` text NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `titleFa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `titleEn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `seoDescription` text COLLATE utf8mb4_unicode_ci,
+  `seoKeyboard` text COLLATE utf8mb4_unicode_ci,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `longDescriptionFa` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `longDescriptionEn` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `shortDescriptionFa` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `shortDescriptionEn` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -79,10 +79,10 @@ INSERT INTO `blogs` (`id`, `titleFa`, `titleEn`, `slug`, `seoDescription`, `seoK
 --
 
 CREATE TABLE `carts` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` bigint(20) NOT NULL,
-  `book_id` bigint(20) NOT NULL,
-  `quantity` int(11) NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` bigint NOT NULL,
+  `book_id` bigint NOT NULL,
+  `quantity` int NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -95,13 +95,13 @@ CREATE TABLE `carts` (
 --
 
 CREATE TABLE `categories` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `titleFa` varchar(255) NOT NULL,
-  `titleEn` varchar(255) NOT NULL,
-  `slug` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `seoDescription` text DEFAULT NULL,
-  `seoKeyboard` text DEFAULT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `titleFa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `titleEn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `seoDescription` text COLLATE utf8mb4_unicode_ci,
+  `seoKeyboard` text COLLATE utf8mb4_unicode_ci,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -121,10 +121,10 @@ INSERT INTO `categories` (`id`, `titleFa`, `titleEn`, `slug`, `image`, `seoDescr
 --
 
 CREATE TABLE `cities` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `titleFa` varchar(255) NOT NULL,
-  `titleEn` varchar(255) NOT NULL,
-  `provincesId` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `titleFa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `titleEn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `provincesId` bigint UNSIGNED NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -137,13 +137,13 @@ CREATE TABLE `cities` (
 --
 
 CREATE TABLE `comment` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` bigint(20) NOT NULL,
-  `product_id` bigint(20) NOT NULL,
-  `comment` text NOT NULL,
-  `status` varchar(255) NOT NULL DEFAULT 'pending',
-  `rating` int(11) NOT NULL,
-  `adminDescription` text DEFAULT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` bigint NOT NULL,
+  `product_id` bigint NOT NULL,
+  `comment` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
+  `rating` int NOT NULL,
+  `adminDescription` text COLLATE utf8mb4_unicode_ci,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -156,8 +156,8 @@ CREATE TABLE `comment` (
 --
 
 CREATE TABLE `coupons` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `code` varchar(255) NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `discount` decimal(8,2) NOT NULL,
   `start_time` datetime NOT NULL,
   `end_time` datetime DEFAULT NULL,
@@ -173,19 +173,19 @@ CREATE TABLE `coupons` (
 --
 
 CREATE TABLE `events` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `titleFa` varchar(255) NOT NULL,
-  `titleEn` varchar(255) NOT NULL,
-  `descriptionFa` text DEFAULT NULL,
-  `descriptionEn` text DEFAULT NULL,
-  `seoDescription` text DEFAULT NULL,
-  `seoKeyboard` text DEFAULT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `titleFa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `titleEn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descriptionFa` text COLLATE utf8mb4_unicode_ci,
+  `descriptionEn` text COLLATE utf8mb4_unicode_ci,
+  `seoDescription` text COLLATE utf8mb4_unicode_ci,
+  `seoKeyboard` text COLLATE utf8mb4_unicode_ci,
   `start_time` datetime NOT NULL,
   `end_time` datetime DEFAULT NULL,
-  `organizer_id` bigint(20) UNSIGNED NOT NULL,
-  `locationFa` varchar(255) DEFAULT NULL,
-  `locationEn` varchar(255) DEFAULT NULL,
-  `status` varchar(255) NOT NULL DEFAULT 'scheduled',
+  `organizer_id` bigint UNSIGNED NOT NULL,
+  `locationFa` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `locationEn` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'scheduled',
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -198,13 +198,13 @@ CREATE TABLE `events` (
 --
 
 CREATE TABLE `failed_jobs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `id` bigint UNSIGNED NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -214,7 +214,7 @@ CREATE TABLE `failed_jobs` (
 --
 
 CREATE TABLE `fair` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -226,8 +226,8 @@ CREATE TABLE `fair` (
 --
 
 CREATE TABLE `galleries` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -239,9 +239,9 @@ CREATE TABLE `galleries` (
 --
 
 CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
-  `batch` int(11) NOT NULL
+  `id` int UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -281,10 +281,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `orders` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` bigint(20) UNSIGNED NOT NULL,
-  `total_price` decimal(8,2) NOT NULL,
-  `status` varchar(255) NOT NULL DEFAULT 'pending',
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` bigint UNSIGNED NOT NULL,
+  `total_price` bigint NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -295,7 +295,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `total_price`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(2, 1, 0.00, 'pending', NULL, '2024-09-12 02:34:53', '2024-09-12 02:34:53');
+(2, 1, 18170000, 'pending', NULL, '2024-09-12 02:34:53', '2024-09-13 08:27:15');
 
 -- --------------------------------------------------------
 
@@ -304,11 +304,11 @@ INSERT INTO `orders` (`id`, `user_id`, `total_price`, `status`, `deleted_at`, `c
 --
 
 CREATE TABLE `order_items` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `order_id` bigint(20) NOT NULL,
-  `product_id` bigint(20) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `price` int(11) NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `order_id` bigint NOT NULL,
+  `product_id` bigint NOT NULL,
+  `quantity` int NOT NULL,
+  `price` int NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -319,7 +319,8 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(4, 2, 2, 2, 966000, NULL, '2024-09-12 02:35:10', '2024-09-12 02:35:15');
+(4, 2, 2, 2, 2898000, NULL, '2024-09-12 02:35:10', '2024-09-13 10:02:29'),
+(5, 2, 3, 46, 18170000, NULL, '2024-09-13 08:13:52', '2024-09-13 10:02:29');
 
 -- --------------------------------------------------------
 
@@ -328,8 +329,8 @@ INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`, 
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -340,8 +341,8 @@ CREATE TABLE `password_resets` (
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -352,12 +353,12 @@ CREATE TABLE `password_reset_tokens` (
 --
 
 CREATE TABLE `personal_access_tokens` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) NOT NULL,
-  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `token` varchar(64) NOT NULL,
-  `abilities` text DEFAULT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -371,28 +372,28 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `product` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `titleFa` varchar(255) NOT NULL,
-  `titleEn` varchar(255) NOT NULL,
-  `slug` varchar(255) NOT NULL,
-  `authorFa` varchar(255) NOT NULL,
-  `authorEn` varchar(255) NOT NULL,
-  `descriptionFa` text DEFAULT NULL,
-  `descriptionEn` text DEFAULT NULL,
-  `publisherFa` varchar(255) NOT NULL,
-  `publisherEn` varchar(255) NOT NULL,
-  `cover_image` varchar(255) NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `titleFa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `titleEn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `authorFa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `authorEn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descriptionFa` text COLLATE utf8mb4_unicode_ci,
+  `descriptionEn` text COLLATE utf8mb4_unicode_ci,
+  `publisherFa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `publisherEn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cover_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `published_at` datetime NOT NULL,
-  `categoryId` bigint(20) NOT NULL,
-  `priceBook` varchar(255) NOT NULL,
-  `offPercent` int(11) DEFAULT 0,
-  `offPrice` int(11) DEFAULT 0,
-  `available` bigint(20) NOT NULL DEFAULT 0,
-  `pages` int(11) DEFAULT NULL,
-  `isbn` varchar(255) NOT NULL,
-  `language` varchar(255) NOT NULL DEFAULT 'fa',
-  `seoDescription` text DEFAULT NULL,
-  `seoKeyboard` text DEFAULT NULL,
+  `categoryId` bigint NOT NULL,
+  `priceBook` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `offPercent` int DEFAULT '0',
+  `offPrice` int DEFAULT '0',
+  `available` bigint NOT NULL DEFAULT '0',
+  `pages` int DEFAULT NULL,
+  `isbn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `language` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'fa',
+  `seoDescription` text COLLATE utf8mb4_unicode_ci,
+  `seoKeyboard` text COLLATE utf8mb4_unicode_ci,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -414,9 +415,9 @@ INSERT INTO `product` (`id`, `titleFa`, `titleEn`, `slug`, `authorFa`, `authorEn
 --
 
 CREATE TABLE `product_galleries` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `productId` bigint(20) UNSIGNED NOT NULL,
-  `image` varchar(255) NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `productId` bigint UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -446,9 +447,9 @@ INSERT INTO `product_galleries` (`id`, `productId`, `image`, `created_at`, `upda
 --
 
 CREATE TABLE `provinces` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `titleFa` varchar(255) NOT NULL,
-  `titleEn` varchar(255) NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `titleFa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `titleEn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -461,10 +462,10 @@ CREATE TABLE `provinces` (
 --
 
 CREATE TABLE `registrations` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `event_id` bigint(20) NOT NULL,
-  `user_id` bigint(20) NOT NULL,
-  `status` varchar(255) NOT NULL DEFAULT 'pending',
+  `id` bigint UNSIGNED NOT NULL,
+  `event_id` bigint NOT NULL,
+  `user_id` bigint NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -477,14 +478,14 @@ CREATE TABLE `registrations` (
 --
 
 CREATE TABLE `roles` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `users` int(11) NOT NULL,
-  `groups` int(11) NOT NULL,
-  `product` int(11) NOT NULL,
-  `slider` int(11) NOT NULL,
-  `role` int(11) NOT NULL,
-  `blog` int(11) NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `users` int NOT NULL,
+  `groups` int NOT NULL,
+  `product` int NOT NULL,
+  `slider` int NOT NULL,
+  `role` int NOT NULL,
+  `blog` int NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -497,9 +498,9 @@ CREATE TABLE `roles` (
 --
 
 CREATE TABLE `sliders` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `link` varchar(255) DEFAULT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -520,15 +521,15 @@ INSERT INTO `sliders` (`id`, `image`, `link`, `deleted_at`, `created_at`, `updat
 --
 
 CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `family` varchar(255) NOT NULL,
-  `mobile` varchar(255) NOT NULL,
-  `code` varchar(255) NOT NULL DEFAULT '0',
-  `status` varchar(30) NOT NULL DEFAULT '0',
-  `IsAdmin` tinyint(1) NOT NULL DEFAULT 0,
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `family` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `status` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `IsAdmin` tinyint(1) NOT NULL DEFAULT '0',
   `deleted_at` timestamp NULL DEFAULT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -547,9 +548,9 @@ INSERT INTO `users` (`id`, `name`, `family`, `mobile`, `code`, `status`, `IsAdmi
 --
 
 CREATE TABLE `wishlists` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` bigint(20) NOT NULL,
-  `book_id` bigint(20) NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` bigint NOT NULL,
+  `book_id` bigint NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -727,139 +728,139 @@ ALTER TABLE `wishlists`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cities`
 --
 ALTER TABLE `cities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `coupons`
 --
 ALTER TABLE `coupons`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `fair`
 --
 ALTER TABLE `fair`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product_galleries`
 --
 ALTER TABLE `product_galleries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `provinces`
 --
 ALTER TABLE `provinces`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `registrations`
 --
 ALTER TABLE `registrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
