@@ -154,20 +154,29 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item"><a href="#"><i class="feather icon-shopping-cart"></i><span class="menu-title"
+                                                                                             data-i18n="Ecommerce">مقالات</span></a>
+                <ul class="menu-content">
+                    <li class="{{ Request::routeIs('addBlog') ? 'active' : '' }}"><a href="{{route('addBlog')}}"><i
+                                class="feather icon-circle"></i><span class="menu-item"
+                                                                      data-i18n="Shop">افزودن مقالات</span></a>
+                    </li>
+                    <li class="{{ Request::routeIs('listBlog') ? 'active' : '' }}"><a href="{{route('listBlog')}}"><i
+                                class="feather icon-circle"></i><span class="menu-item"
+                                                                      data-i18n="Shop">نمایش مقالات</span></a>
+                    </li>
+                </ul>
+            </li>
 
-{{--            <li class="nav-item"><a href="#"><i class="feather icon-shopping-cart"></i><span class="menu-title"--}}
-{{--                                                                                             data-i18n="Ecommerce">مقالات</span></a>--}}
-{{--                <ul class="menu-content">--}}
-{{--                    <li class="{{ Request::routeIs('addBlog') ? 'active' : '' }}"><a href="{{route('addBlog')}}"><i--}}
-{{--                                class="feather icon-circle"></i><span class="menu-item"--}}
-{{--                                                                      data-i18n="Shop">افزودن مقالات</span></a>--}}
-{{--                    </li>--}}
-{{--                    <li class="{{ Request::routeIs('listBlog') ? 'active' : '' }}"><a href="{{route('listBlog')}}"><i--}}
-{{--                                class="feather icon-circle"></i><span class="menu-item"--}}
-{{--                                                                      data-i18n="Shop">نمایش مقالات</span></a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </li>--}}
+            <li class="nav-item"><a href="#"><i class="feather icon-shopping-cart"></i><span class="menu-title"
+                                                                                             data-i18n="Ecommerce">تنظیمات</span></a>
+                <ul class="menu-content">
+                    <li class="{{ Request::routeIs('addSetting') ? 'active' : '' }}"><a href="{{route('addSetting')}}"><i
+                                class="feather icon-circle"></i><span class="menu-item"
+                                                                      data-i18n="Shop">افزودن تنظیمات</span></a>
+                    </li>
+                </ul>
+            </li>
 {{--            <li class="nav-item"><a href="#"><i class="feather icon-shopping-cart"></i><span class="menu-title"--}}
 {{--                                                                                             data-i18n="Ecommerce">نظرات و پیشنهادات</span></a>--}}
 {{--                <ul class="menu-content">--}}

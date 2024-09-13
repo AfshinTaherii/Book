@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin\Blog;
+use App\Models\Admin\Category;
 use App\Models\Admin\Order;
 use App\Models\Admin\OrderItem;
 use App\Models\Admin\Product;
@@ -30,7 +31,8 @@ class HomeController extends Controller
         $slider = Slider::all();
         $product = Product::all();
         $blog = Blog::all();
-        return view('Front.pages.public.index', compact('slider', 'product', 'blog'));
+        $group = Category::all();
+        return view('Front.pages.public.index', compact('slider', 'product', 'blog','group'));
     }
 
 

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('order_items', function (Blueprint $table) {
             $table->id();
             $table->BigInteger('order_id');
-            $table->BigInteger('book_id');
+            $table->BigInteger('product_id');
             $table->integer('quantity');
             $table->integer('price');
             $table->softDeletes();

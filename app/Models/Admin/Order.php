@@ -10,4 +10,9 @@ class Order extends Model
 {
     use HasFactory,SoftDeletes;
     protected $guarded=['id'];
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class, 'order_id');
+    }
+
 }

@@ -9,5 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Comment extends Model
 {
     use HasFactory,SoftDeletes;
+    protected $table = 'comment';
     protected $guarded=['id'];
 }

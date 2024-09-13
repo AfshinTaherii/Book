@@ -74,136 +74,15 @@
 
     <!-- Start Startup Main Banner -->
     <div class="home-slides startup-home">
-        <div class="main-banner startup-bg1">
-            <div class="d-table">
-                <div class="d-table-cell">
-                    <div class="container">
-                        <div class="row">
-                            @foreach($slider as $item)
+        @foreach($slider as $item)
+              <img src="{{$item->image}}" alt="image" style="width: 100%">
+            <div   class="main-banner ">
+                <div class="d-table">
+                    <div class="d-table-cell">
+                        <div class="container">
+                            <div class="row">
                                 <div class="col-lg-6 col-md-12">
-                                    <div class="startup-image">
-                                        <img src="{{$item->image}}" class="wow fadeInDown" data-wow-delay="0.6s"
-                                             alt="board">
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-gray shape-1"></div>
-            <div class="shape1"><img src="/Front/assets/img/shape1.png" alt="img"></div>
-            <div class="shape2"><img src="/Front/assets/img/shape2.png" alt="img"></div>
-            <div class="shape3"><img src="/Front/assets/img/shape3.png" alt="img"></div>
-            <div class="shape6"><img src="/Front/assets/img/shape6.png" alt="img"></div>
-            <div class="shape8 rotateme"><img src="/Front/assets/img/shape8.svg" alt="shape"></div>
-            <div class="shape9"><img src="/Front/assets/img/shape9.svg" alt="shape"></div>
-        </div>
-
-        <div class="main-banner startup-bg2">
-            <div class="d-table">
-                <div class="d-table-cell">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12">
-                                <div class="hero-content">
-                                    <h1>این زمان برای ایجاد طرح کسب و کار خود است</h1>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                        گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                                        استفاده از طراحان گرافیک است.</p>
-
-                                    <a href="#" class="btn btn-primary">هم اکنون شروع کنید</a>
-                                    <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                       class="video-btn popup-youtube"> تماشای ویدیو <i class="icofont-play-alt-3"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-md-12">
-                                <div class="startup-image">
-                                    <img src="/Front/assets/img/startup-shape/board.png" class="wow fadeInDown"
-                                         data-wow-delay="0.6s" alt="board">
-                                    <img src="/Front/assets/img/startup-shape/chart1.png" class="wow fadeInUp"
-                                         data-wow-delay="0.6s" alt="chart1">
-                                    <img src="/Front/assets/img/startup-shape/chart2.png" class="wow fadeInLeft"
-                                         data-wow-delay="0.6s" alt="chart2">
-                                    <img src="/Front/assets/img/startup-shape/check-mark.png" class="wow zoomIn"
-                                         data-wow-delay="0.6s" alt="check-mark">
-                                    <img src="/Front/assets/img/startup-shape/girl1.png" class="wow bounceIn"
-                                         data-wow-delay="0.6s" alt="girl1">
-                                    <img src="/Front/assets/img/startup-shape/girl2.png" class="wow fadeInDown"
-                                         data-wow-delay="0.6s" alt="girl2">
-                                    <img src="/Front/assets/img/startup-shape/line.png" class="wow zoomIn"
-                                         data-wow-delay="0.6s" alt="line">
-                                    <img src="/Front/assets/img/startup-shape/man.png" class="wow fadeInUp"
-                                         data-wow-delay="0.6s" alt="man">
-                                    <img src="/Front/assets/img/startup-shape/progress.png" class="wow rotateIn"
-                                         data-wow-delay="0.6s" alt="progress">
-                                    <img src="/Front/assets/img/startup-shape/table.png" class="wow fadeInUp"
-                                         data-wow-delay="0.6s" alt="table">
-
-                                    <img src="/Front/assets/img/startup-shape/main-image.png" class="wow fadeInUp"
-                                         data-wow-delay="0.6s" alt="main-image">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-gray shape-1"></div>
-            <div class="shape1"><img src="/Front/assets/img/shape1.png" alt="img"></div>
-            <div class="shape2"><img src="/Front/assets/img/shape2.png" alt="img"></div>
-            <div class="shape3"><img src="/Front/assets/img/shape3.png" alt="img"></div>
-            <div class="shape6"><img src="/Front/assets/img/shape6.png" alt="img"></div>
-            <div class="shape8 rotateme"><img src="/Front/assets/img/shape8.svg" alt="shape"></div>
-            <div class="shape9"><img src="/Front/assets/img/shape9.svg" alt="shape"></div>
-        </div>
-
-        <div class="main-banner startup-bg3">
-            <div class="d-table">
-                <div class="d-table-cell">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12">
-                                <div class="hero-content">
-                                    <h1>این زمان برای ایجاد طرح کسب و کار خود است</h1>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                        گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                                        استفاده از طراحان گرافیک است.</p>
-
-                                    <a href="#" class="btn btn-primary">هم اکنون شروع کنید</a>
-                                    <a href="https://www.youtube.com/watch?v=bk7McNUjWgw"
-                                       class="video-btn popup-youtube"> تماشای ویدیو <i class="icofont-play-alt-3"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-md-12">
-                                <div class="startup-image">
-                                    <div class="startup-image">
-                                        <img src="/Front/assets/img/startup-shape/board.png" class="wow fadeInDown"
-                                             data-wow-delay="0.6s" alt="board">
-                                        <img src="/Front/assets/img/startup-shape/chart1.png" class="wow fadeInUp"
-                                             data-wow-delay="0.6s" alt="chart1">
-                                        <img src="/Front/assets/img/startup-shape/chart2.png" class="wow fadeInLeft"
-                                             data-wow-delay="0.6s" alt="chart2">
-                                        <img src="/Front/assets/img/startup-shape/check-mark.png" class="wow zoomIn"
-                                             data-wow-delay="0.6s" alt="check-mark">
-                                        <img src="/Front/assets/img/startup-shape/girl1.png" class="wow bounceIn"
-                                             data-wow-delay="0.6s" alt="girl1">
-                                        <img src="/Front/assets/img/startup-shape/girl2.png" class="wow fadeInDown"
-                                             data-wow-delay="0.6s" alt="girl2">
-                                        <img src="/Front/assets/img/startup-shape/line.png" class="wow zoomIn"
-                                             data-wow-delay="0.6s" alt="line">
-                                        <img src="/Front/assets/img/startup-shape/man.png" class="wow fadeInUp"
-                                             data-wow-delay="0.6s" alt="man">
-                                        <img src="/Front/assets/img/startup-shape/progress.png" class="wow rotateIn"
-                                             data-wow-delay="0.6s" alt="progress">
-                                        <img src="/Front/assets/img/startup-shape/table.png" class="wow fadeInUp"
-                                             data-wow-delay="0.6s" alt="table">
-
-                                        <img src="/Front/assets/img/startup-shape/main-image.png" class="wow fadeInUp"
-                                             data-wow-delay="0.6s" alt="main-image">
+                                    <div class="hero-content">
                                     </div>
                                 </div>
                             </div>
@@ -211,17 +90,36 @@
                     </div>
                 </div>
             </div>
+        @endforeach
 
-            <div class="bg-gray shape-1"></div>
-            <div class="shape1"><img src="/Front/assets/img/shape1.png" alt="img"></div>
-            <div class="shape2"><img src="/Front/assets/img/shape2.png" alt="img"></div>
-            <div class="shape3"><img src="/Front/assets/img/shape3.png" alt="img"></div>
-            <div class="shape6"><img src="/Front/assets/img/shape6.png" alt="img"></div>
-            <div class="shape8 rotateme"><img src="/Front/assets/img/shape8.svg" alt="shape"></div>
-            <div class="shape9"><img src="/Front/assets/img/shape9.svg" alt="shape"></div>
+    </div>
+
+    <!-- Start Partner Area -->
+
+    <div class="container">
+        <div class="section-title" style="margin-top: 70px">
+            <h2>دسته بندی محصولات</h2>
+            <div class="bar"></div>
         </div>
     </div>
-    <!-- End Startup Main Banner -->
+
+    <div class="partner-area marketing-partner">
+        <div class="container">
+            <div class="row">
+                <div class="partner-slides">
+                    @foreach($group as $item)
+                        <div class="col-lg-12">
+                            <div class="item">
+                                <a href="{{route('productList',$item->slug)}}">
+                                    <img src="{{$item->image}}" alt="partner">
+                                    <h4 class="font-weight-bold mt-3">{{$item->titleFa}}</h4></a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <!-- End Partner Area -->
 
     <!-- Start Product Area -->
     <section class="product-area ptb-100">
@@ -229,214 +127,34 @@
             <div class="section-title">
                 <h2>آخرین محصول ما</h2>
                 <div class="bar"></div>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
             </div>
 
             <div class="row">
                 <div class="product-slides">
-                    {{--                    @foreach($slider as $item)--}}
-                    {{--                    {{$item->image}}--}}
+                    @foreach($product as $item)
+                        <div class="col-lg-12">
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <img src="{{$item->cover_image}}" alt="item">
 
-                    <div class="col-lg-12">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <img src="/Front/assets/img/shop-item1.jpg" alt="item">
+                                    <a href="{{ route('addToBasket',$item->id) }}" class="add-to-cart-btn" id="addToCartButton">افزودن به سبد خرید<i
+                                            class="icofont-shopping-cart"></i></a>
+                                </div>
 
-                                <a href="#" class="add-to-cart-btn">افزودن به سبد خرید<i
-                                        class="icofont-shopping-cart"></i></a>
-                            </div>
+                                <div class="product-content">
+                                    <h3>
+                                        <a href="{{route('showProduct',$item->slug)}}">{{$item->titleFa}}</a>
+                                    </h3>
 
-                            <div class="product-content">
-                                <h3>
-                                    <a href="#">ساعت کشویی</a>
-                                </h3>
-
-                                <div class="row h-100 justify-content-center align-items-center">
-                                    <div class="col-lg-5 col-6">
-                                        <h5>تومان 8.50 <span>تومان 12.00</span></h5>
-                                    </div>
-
-                                    <div class="col-lg-7 col-6">
-                                        <ul>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                        </ul>
+                                    <div class="row h-100 justify-content-center align-items-center">
+                                        <div class="col-lg-5 col-6">
+                                            <h5>{{$item->offPrice}} <span>{{$item->priceBook}}</span></h5>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    {{--                    @endforeach--}}
-
-
-                    <div class="col-lg-12">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <img src="/Front/assets/img/shop-item2.jpg" alt="item">
-
-                                <a href="#" class="add-to-cart-btn">افزودن به سبد خرید <i
-                                        class="icofont-shopping-cart"></i></a>
-                            </div>
-
-                            <div class="product-content">
-                                <h3>
-                                    <a href="#">ساعت کشویی</a>
-                                </h3>
-
-                                <div class="row h-100 justify-content-center align-items-center">
-                                    <div class="col-lg-5 col-6">
-                                        <h5>تومان 8.50 <span>تومان 12.00</span></h5>
-                                    </div>
-
-                                    <div class="col-lg-7 col-6">
-                                        <ul>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <img src="/Front/assets/img/shop-item3.jpg" alt="item">
-
-                                <a href="#" class="add-to-cart-btn">افزودن به سبد خرید <i
-                                        class="icofont-shopping-cart"></i></a>
-                            </div>
-
-                            <div class="product-content">
-                                <h3>
-                                    <a href="#">ساعت کشویی</a>
-                                </h3>
-
-                                <div class="row h-100 justify-content-center align-items-center">
-                                    <div class="col-lg-5 col-6">
-                                        <h5>تومان 8.50 <span>تومان 12.00</span></h5>
-                                    </div>
-
-                                    <div class="col-lg-7 col-6">
-                                        <ul>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <img src="/Front/assets/img/shop-item4.jpg" alt="item">
-
-                                <a href="#" class="add-to-cart-btn">افزودن به سبد خرید <i
-                                        class="icofont-shopping-cart"></i></a>
-                            </div>
-
-                            <div class="product-content">
-                                <h3>
-                                    <a href="#">ساعت کشویی</a>
-                                </h3>
-
-                                <div class="row h-100 justify-content-center align-items-center">
-                                    <div class="col-lg-5 col-6">
-                                        <h5>تومان 8.50 <span>تومان 12.00</span></h5>
-                                    </div>
-
-                                    <div class="col-lg-7 col-6">
-                                        <ul>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <img src="/Front/assets/img/shop-item5.jpg" alt="item">
-
-                                <a href="#" class="add-to-cart-btn">افزودن به سبد خرید <i
-                                        class="icofont-shopping-cart"></i></a>
-                            </div>
-
-                            <div class="product-content">
-                                <h3>
-                                    <a href="#">ساعت کشویی</a>
-                                </h3>
-
-                                <div class="row h-100 justify-content-center align-items-center">
-                                    <div class="col-lg-5 col-6">
-                                        <h5>تومان 8.50 <span>تومان 12.00</span></h5>
-                                    </div>
-
-                                    <div class="col-lg-7 col-6">
-                                        <ul>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <img src="/Front/assets/img/shop-item6.jpg" alt="item">
-
-                                <a href="#" class="add-to-cart-btn">افزودن به سبد خرید <i
-                                        class="icofont-shopping-cart"></i></a>
-                            </div>
-
-                            <div class="product-content">
-                                <h3>
-                                    <a href="#">ساعت کشویی</a>
-                                </h3>
-
-                                <div class="row h-100 justify-content-center align-items-center">
-                                    <div class="col-lg-5 col-6">
-                                        <h5>تومان 8.50 <span>تومان 12.00</span></h5>
-                                    </div>
-
-                                    <div class="col-lg-7 col-6">
-                                        <ul>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                            <li><i class="icofont-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -449,125 +167,28 @@
             <div class="section-title">
                 <h2>آخرین اخبار ما</h2>
                 <div class="bar"></div>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
             </div>
 
             <div class="row">
                 <div class="blog-slides">
+                    @foreach($blog as $item)
                     <div class="col-lg-12 col-md-12">
                         <div class="single-blog-post">
-                            <a href="#" class="post-image"><img src="/Front/assets/img/blog-img1.jpg" alt="blog-image"></a>
+                            <a href="#" class="post-image"><img src="{{$item->image}}" alt="blog-image"></a>
 
                             <div class="blog-post-content">
                                 <ul>
-                                    <li><i class="icofont-user-male"></i> <a href="#">ادمبن</a></li>
-                                    <li><i class="icofont-wall-clock"></i> اسفند 1397</li>
+                                    <li><i class="icofont-user-male"></i> <a href="#">ادمین</a></li>
+                                    <li><i class="icofont-wall-clock"></i>شهریور 1403</li>
                                 </ul>
-                                <h3><a href="#">محبوب ترین برنامه های کسب و کار جدید</a></h3>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                    از طراحان گرافیک است. </p>
+                                <h3><a href="#">{{$item->titleFa}}</a></h3>
+                                <p>{{$item->shortDescriptionFa}}</p>
                                 <a href="#" class="read-more-btn">ادامه مطلب <i
                                         class="icofont-rounded-double-right"></i></a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-12 col-md-12">
-                        <div class="single-blog-post">
-                            <a href="#" class="post-image"><img src="/Front/assets/img/blog-img2.jpg" alt="blog-image"></a>
-
-                            <div class="blog-post-content">
-                                <ul>
-                                    <li><i class="icofont-user-male"></i> <a href="#">ادمبن</a></li>
-                                    <li><i class="icofont-wall-clock"></i> اسفند 1397</li>
-                                </ul>
-                                <h3><a href="#">بهترین ابزار مدیریت بازاریابی</a></h3>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                    از طراحان گرافیک است. </p>
-                                <a href="#" class="read-more-btn">ادامه مطلب <i
-                                        class="icofont-rounded-double-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12 col-md-12">
-                        <div class="single-blog-post">
-                            <a href="#" class="post-image"><img src="/Front/assets/img/blog-img3.jpg" alt="blog-image"></a>
-
-                            <div class="blog-post-content">
-                                <ul>
-                                    <li><i class="icofont-user-male"></i> <a href="#">ادمبن</a></li>
-                                    <li><i class="icofont-wall-clock"></i> اسفند 1397</li>
-                                </ul>
-                                <h3><a href="#">3 پلاگین ووکامرس برای افزایش فروش</a></h3>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                    از طراحان گرافیک است. </p>
-                                <a href="#" class="read-more-btn">ادامه مطلب <i
-                                        class="icofont-rounded-double-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12 col-md-12">
-
-                        <div class="single-blog-post">
-                            <a href="#" class="post-image"><img src="/Front/assets/img/blog-img4.jpg" alt="blog-image"></a>
-
-                            <div class="blog-post-content">
-                                <ul>
-                                    <li><i class="icofont-user-male"></i> <a href="#">ادمبن</a></li>
-                                    <li><i class="icofont-wall-clock"></i> اسفند 1397</li>
-                                </ul>
-                                <h3><a href="#">طراحی ایمیل های سفارشی</a></h3>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                    از طراحان گرافیک است. </p>
-                                <a href="#" class="read-more-btn">ادامه مطلب <i
-                                        class="icofont-rounded-double-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12 col-md-12">
-                        <div class="single-blog-post">
-                            <a href="#" class="post-image"><img src="/Front/assets/img/blog-img5.jpg" alt="blog-image"></a>
-
-                            <div class="blog-post-content">
-                                <ul>
-                                    <li><i class="icofont-user-male"></i> <a href="#">ادمبن</a></li>
-                                    <li><i class="icofont-wall-clock"></i> اسفند 1397</li>
-                                </ul>
-                                <h3><a href="#">محبوب ترین برنامه های جدید در سال 2024</a></h3>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                    از طراحان گرافیک است. </p>
-                                <a href="#" class="read-more-btn">ادامه مطلب <i
-                                        class="icofont-rounded-double-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12 col-md-12">
-                        <div class="single-blog-post">
-                            <a href="#" class="post-image"><img src="/Front/assets/img/blog-img3.jpg" alt="blog-image"></a>
-
-                            <div class="blog-post-content">
-                                <ul>
-                                    <li><i class="icofont-user-male"></i> <a href="#">ادمبن</a></li>
-                                    <li><i class="icofont-wall-clock"></i> اسفند 1397</li>
-                                </ul>
-                                <h3><a href="#">سریع ترین برنامه های در حال رشد در سال 2024</a></h3>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                    از طراحان گرافیک است. </p>
-                                <a href="#" class="read-more-btn">ادامه مطلب <i
-                                        class="icofont-rounded-double-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

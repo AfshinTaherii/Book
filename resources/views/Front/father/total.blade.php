@@ -27,7 +27,7 @@
 
     <title>نمایشگاه کتاب</title>
 
-    <link rel="icon" type="/image/png" href="/Front/assets/img/favicon.png">
+    <link rel="icon" type="/image/png" href="/Front/img/logonom.png">
 </head>
 <body>
 
@@ -42,7 +42,7 @@
     <div class="crake-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index-7.html"><img src="/Front/assets/img/logo.png" alt="logo"></a>
+                <a class="navbar-brand" href="index-7.html"><img src="/Front/img/logo.png" alt="logo"></a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav nav ml-auto">
@@ -74,12 +74,6 @@
                                     </ul>
                                 </li>
 
-                                <li class="nav-item"><a href="#" class="nav-link">نمونه کار</a>
-                                    <ul class="dropdown_menu">
-                                        <li><a href="project-1.html">نمونه کارها 2 ستون</a></li>
-                                    </ul>
-                                </li>
-
                                 <li class="nav-item"><a href="#" class="nav-link">فروشگاه</a>
                                     <ul class="dropdown_menu">
                                         <li><a href="shop-1.html">فروشگاه 1</a></li>
@@ -97,11 +91,6 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item"><a href="#" class="nav-link">نمونه کار</a>
-                            <ul class="dropdown_menu">
-                                <li><a href="project-1.html">نمونه کارها 2 ستون</a></li>
-                            </ul>
-                        </li>
 
                         <li class="nav-item"><a href="#" class="nav-link">بلاگ</a>
                             <ul class="dropdown_menu">
@@ -155,7 +144,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="single-footer-widget">
-                    <a href="#" class="logo"><img src="/Front/assets/img/logo2.png" alt="logo2"></a>
+                    <a href="#" class="logo"><img src="/Front/img/logo.png" alt="logo2"></a>
                     <p>برنامه روزانه، هفته یا ماه را پیش ببرید و وضعیت پروژه را در یک نگاه ببینید. جستجو و فیلتر برای تمرکز بر روی هر چیزی یک پروژه واحد فردی.</p>
 
                     <ul class="social-list">
@@ -169,7 +158,7 @@
 
             <div class="col-lg-3 col-md-6">
                 <div class="single-footer-widget pl-5">
-                    <h3>شرکت</h3>
+                    <h3>نمایشگاه کتاب</h3>
 
                     <ul class="list">
                         <li><a href="#">درباره</a></li>

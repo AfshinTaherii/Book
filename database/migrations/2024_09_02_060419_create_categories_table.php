@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('titleFa');
             $table->string('titleEn');
+            $table->string('slug');
             $table->string('image');
             $table->text('seoDescription')->nullable();
             $table->text('seoKeyboard')->nullable();

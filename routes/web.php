@@ -17,16 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/addToBasket/{id}', [HomeController::class, 'addToBasket'])->name('addToBasket')->middleware('auth');
+Route::get('/productList/{slug}', [\App\Http\Controllers\Admin\CategoryController::class, 'productList'])->name('productList');
+Route::get('/showProduct/{slug}', [\App\Http\Controllers\Admin\CategoryController::class, 'showProduct'])->name('showProduct');
+//Route::get('/blogs/{slug}', [BlogController::class, 'blogs'])->name('blogs');
+
 
 Auth::routes();
 
@@ -44,4 +43,3 @@ Route::post('/checkCode', [RegisterController::class, 'CheckCode'])->name('Check
 
 Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

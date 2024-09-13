@@ -116,8 +116,8 @@ class BlogController extends Controller
         ], [
             'titleFa.required' => 'عنوان  فارسی الزامی است',
             'titleEn.required' => 'عنوان انگلیسی الزامی است',
-            'longDescriptionFa.required' => 'توضیحات بلند الزامی است',
-            'longDescriptionEn.required' => 'توضیحات بلند الزامی است',
+            'longDescriptionFa.required' => 'توضیحات بلند فارسی الزامی است',
+            'longDescriptionEn.required' => 'توضیحات بلند انگلیسی الزامی است',
             'shortDescriptionFa.required' => 'توضیحات کوتاه فارسی الزامی است',
             'shortDescriptionEn.required' => 'توضیحات کوتاه انگلیسی الزامی است',
             'seoDescription.required' => 'توضیحات سئو الزامی است',

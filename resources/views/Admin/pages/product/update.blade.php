@@ -143,9 +143,9 @@
                                                        placeholder="تاریخ منتشر شده" name="published_at" value="{{$data->published_at}}"></fieldset>
                                         </div>
                                         <div class="col-xl-6 col-md-12 col-12 mb-1">
-                                            <fieldset class="form-group"><label for="image">انتخاب عکس اصلی</label>
-                                                <input type="file" class="form-control" id="image"
-                                                       name="image"></fieldset>
+                                            <fieldset class="form-group"><label for="cover_image">انتخاب عکس اصلی</label>
+                                                <input type="file" class="form-control" id="cover_image"
+                                                       name="cover_image"></fieldset>
                                         </div>
                                         <div class="col-xl-6 col-md-12 col-12 mb-1">
                                             <fieldset class="form-group"><label for="seoKeyword">لغات کلیدی</label>

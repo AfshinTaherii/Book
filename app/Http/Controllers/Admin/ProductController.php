@@ -34,8 +34,7 @@ class ProductController extends Controller
             ->addColumn('action', function ($row) {
 
                 $btn = '<a href="' . route('deleteProduct', $row->id) . '" class="danger"><i class="fa fa-trash"></i></a>
-<a href="' . route('updateProduct', $row->id) . '" class="success"><i class="fa fa-edit"></i></i></a>
-<a href="' . route('addStroge', $row->id) . '" class="success"><i class="fa fa-plus"></i></i></a>';
+<a href="' . route('updateProduct', $row->id) . '" class="success"><i class="fa fa-edit"></i></i></a>';
 
                 return $btn;
             })
@@ -86,6 +85,8 @@ class ProductController extends Controller
             'authorEn' => $request->authorEn,
             'publisherFa' => $request->publisherFa,
             'publisherEn' => $request->publisherEn,
+            'published_at' => $request->published_at,
+            'isbn' => $request->isbn,
             'categoryId' => $request->categoryId,
             'priceBook' => str_replace(',', '', $request->priceBook),
             'offPercent' => $request->offPercent,
@@ -139,8 +140,7 @@ class ProductController extends Controller
             'priceBook' => 'required',
             'descriptionFa' => 'required',
             'descriptionEn' => 'required',
-            'seoKeyword' => 'required',
-            'seoDescription' => 'required',
+
 
         ], [
             'titleFa.required' => 'عنوان فارسی الزامی است',
@@ -149,12 +149,11 @@ class ProductController extends Controller
             'priceBook.required' => 'قیمت الزامی است',
             'descriptionFa.required' => 'توضیحات فارسی الزامی است',
             'descriptionEn.required' => 'توضیحات انگلیسی الزامی است',
-            'seoKeyword.required' => 'توضیحات سئو الزامی است',
-            'seoDescription.required' => 'لغات کلیدی سئو الزامی است',
+
         ]);
 
-        $imageAddres = Product::find($request->id)->image;
-        if ($request->image != null) {
+        $imageAddres = Product::find($request->id)->cover_image;
+        if ($request->cover_image != null) {
             $urll = url('/') . '/';
 
             $imagePath = str_replace($urll, '', $imageAddres);
@@ -180,6 +179,8 @@ class ProductController extends Controller
             'authorEn' => $request->authorEn,
             'publisherFa' => $request->publisherFa,
             'publisherEn' => $request->publisherEn,
+            'published_at' => $request->published_at,
+            'isbn' => $request->isbn,
             'categoryId' => $request->categoryId,
             'priceBook' => str_replace(',', '', $request->priceBook),
             'offPercent' => $request->offPercent,
@@ -187,8 +188,6 @@ class ProductController extends Controller
             'descriptionFa' => $request->descriptionFa,
             'descriptionEn' => $request->descriptionEn,
             'cover_image' => $imageAddres,
-            'seoKeyword' => $request->seoKeyword,
-            'seoDescription' => $request->seoDescription,
         ]);
 
         if ($request->sliderImg != null) {

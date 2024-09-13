@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\RollController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -179,6 +180,12 @@ Route::group(['prefix' => 'admin'],function () {
         Route::get('/ajax', [CommentController::class, 'ajax'])->name('ajaxComments');
         Route::get('/delete/{id}', [CommentController::class, 'delete'])->name('deleteComments');
         Route::post('/update', [CommentController::class, 'storeUpdate'])->name('storeUpdateComments');
+    });
+
+
+    Route::group(['prefix' => 'setting'], function () {;
+        Route::get('/add', [SettingController::class, 'add'])->name('addSetting');
+        Route::post('/add', [SettingController::class, 'store'])->name('storeSetting');
     });
 
 });

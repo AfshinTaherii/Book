@@ -72,7 +72,7 @@
 
                                         <div class="col-xl-6 col-md-12 col-12 mb-1">
                                             <fieldset class="form-group"><label for="longDescriptionEn">توضیحات بلند انگلیسی</label>
-                                                <textarea placeholder="توضیحات بلند انگلیسی" name="longDescriptionEN"
+                                                <textarea placeholder="توضیحات بلند انگلیسی" name="longDescriptionEn"
                                                           class="form-control" id="longDescriptionEn">{{$data->longDescriptionEn}}</textarea>
                                             </fieldset>
                                         </div>

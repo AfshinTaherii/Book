@@ -69,7 +69,7 @@ class SliderController extends Controller
     {
         $data = Slider::find($id);
 
-        return view('Admin.slider.update', compact('data'));
+        return view('Admin.pages.slider.update', compact('data'));
     }
 
 
