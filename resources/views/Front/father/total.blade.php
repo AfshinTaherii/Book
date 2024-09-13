@@ -112,7 +112,7 @@
                 <div class="mr-auto others-option">
                     <ul class="navbar-nav">
                         <li class="nav-item cart-wrapper">
-                            <a href="#">
+                            <a href="{{route('shopBasket')}}">
                                 <i class="icofont-shopping-cart cart-icon"></i>
                                 <span>
                                     <?php

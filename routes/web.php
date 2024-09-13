@@ -43,3 +43,9 @@ Route::post('/checkCode', [RegisterController::class, 'CheckCode'])->name('Check
 
 Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
+Route::group(['prefix' => 'basket','middleware' => ['auth']],function () {
+    Route::get('/shopBasket', [HomeController::class, 'shopBasket'])->name('shopBasket');
+    Route::get('/deleteCart/{id}', [HomeController::class, 'deleteCart'])->name('deleteCart');
+    Route::post('/updateCart', [HomeController::class, 'updateCart'])->name('updateCart');
+
+});

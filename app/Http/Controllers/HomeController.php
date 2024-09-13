@@ -74,10 +74,46 @@ class HomeController extends Controller
         return back()->with('success',true)->with('message',"با موفقیت به سید خرید اضافه شد");
     }
 
+    public function shopBasket()
+    {
+        $data = [];
+        $totalPrice = 0;
+        $pendingOrder = Order::query()->where('status', 'pending')->where('user_id', Auth::id())->first();
+        if ($pendingOrder){
+            $orders = OrderItem::query()->where('order_id', $pendingOrder->id)->get();
+            foreach ($orders as $idex=>$order) {
+                $product = Product::query()->find($order->product_id);
+                $result = (object)[
+                    'cover_image'=>$product->cover_image,
+                    'titleFa'=>$product->titleFa,
+                    'priceBook'=>$product->offPercent ? $product->offPercent : $product->priceBook,
+                    'amount'=>$order->quantity,
+                    'id'=>$order->id,
+                    'totalPrice'=>$order->price,
+                ];
+                $data[] = $result;
+                $totalPrice += $order->price;
+            }
+        }
+        return view('Front.pages.cart.cart',compact('data','totalPrice'));
+    }
 
+    public function deleteCart($id)
+    {
+        OrderItem::query()->where('id', $id)->delete();
+        return back()->with('success',true)->with('message','با موفقیت حذف شد');
+    }
 
+    public function updateCart(Request $request)
+    {
+        $ids = $request->id;
+        $quantitys = $request->quantity;
 
-
-
-
+        foreach ($ids as $index=>$id) {
+            OrderItem::query()->where('id', $id)->update([
+                'quantity' => $quantitys[$index],
+            ]);
+        }
+        return back()->with('success',true)->with('message','با موفقیت به روز رسانی شد');
+    }
 }

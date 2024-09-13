@@ -70,7 +70,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="post" action="#">
+                    <form method="post" action="{{route('updateCart')}}">
                         @csrf
                         <div class="cart-table table-responsive">
                             <table class="table table-bordered">
@@ -134,7 +134,7 @@
                                 </div>
 
                                 <div class="col-lg-5 col-md-5 text-right">
-                                    <a href="#" class="btn btn-primary">به روز رسانی سبد خرید</a>
+                                    <button class="btn btn-primary">به روز رسانی سبد خرید</button>
                                 </div>
                             </div>
                         </div>
@@ -143,8 +143,8 @@
                             <h3>مجموع سبد</h3>
 
                             <ul>
-                                <li>کل حجم: <span>تومان 250.00</span></li>
-                                <li>جمع: <span>تومان 250.00</span></li>
+                                <li>کل حجم: <span>تومان {{number_format($totalPrice)}}</span></li>
+                                <li>جمع: <span>تومان {{number_format($totalPrice)}}</span></li>
                             </ul>
                             <a href="#" class="btn btn-primary">تایید کنید</a>
                         </div>
