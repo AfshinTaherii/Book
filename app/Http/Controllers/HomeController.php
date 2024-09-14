@@ -151,4 +151,13 @@ class HomeController extends Controller
         return view('Front.pages.cart.check_cart',compact('data','totalPrice'));
     }
 
+    public function sendingBasket(Request $request)
+    {
+        Order::where('id', $request->id)->update([
+            'status' => 'sending',
+            'address' => $request->address
+        ]);
+        return back()->with('success', true)->with('message', 'درخواست شما با موفقیت ثبت شد');
+    }
+
 }

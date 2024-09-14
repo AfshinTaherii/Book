@@ -49,5 +49,6 @@ Route::group(['prefix' => 'basket','middleware' => ['auth']],function () {
     Route::get('/deleteCart/{id}', [HomeController::class, 'deleteCart'])->name('deleteCart');
     Route::post('/updateCart', [HomeController::class, 'updateCart'])->name('updateCart');
     Route::get('/checkBasket', [HomeController::class, 'checkBasket'])->name('CheckBasket');
+    Route::post('/sendingBasket', [HomeController::class, 'sendingBasket'])->name('SendingBasket');
 
 });

@@ -48,7 +48,8 @@
                     </div>
                 </div>
             </div>
-            <form method="post" action="#">
+            <form method="post" action="{{route('SendingBasket')}}">
+                @csrf
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="billing-details">
@@ -85,7 +86,7 @@
 {{--                                </div>--}}
                                 <div class="col-lg-12 col-md-12">
                                 <fieldset class="form-group floating-label-form-group">
-                                <textarea class="form-control" name="details" id="details"
+                                <textarea class="form-control" name="address" id="address"
                                       placeholder="آدرس خود را وارد نمایید"></textarea>
                                 </fieldset>
                                 </div>
@@ -155,7 +156,7 @@
 {{--                                    <label for="cash-on-delivery">درب محل</label>--}}
 {{--                                </p>--}}
 {{--                            </div>--}}
-                            <a href="#" class="btn btn-primary order-btn">تایید نهایی</a>
+                            <a href="{{route('SendingBasket')}}" class="btn btn-primary order-btn">تایید نهایی</a>
                         </div>
                     </div>
                 </div>
