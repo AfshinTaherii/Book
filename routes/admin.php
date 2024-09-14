@@ -133,6 +133,10 @@ Route::group(['prefix' => 'admin'],function () {
         Route::get('/update/{id}', [EventsController::class, 'update'])->name('updateEvent');
         Route::post('/update', [EventsController::class, 'storeUpdate'])->name('storeUpdateEvent');
         Route::get('/delete/{id}', [EventsController::class, 'delete'])->name('deleteEvent');
+        Route::get('/eventPending', [EventsController::class, 'sendAjax'])->name('EventPending');
+        Route::get('/eventConfirm/{id}', [EventsController::class, 'eventConfirm'])->name('EventConfirm');
+        Route::get('/showEventConfirm', [EventsController::class, 'showEventConfirm'])->name('ShowEventConfirm');
+
     });
 
     /*coupon*/

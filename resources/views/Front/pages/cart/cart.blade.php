@@ -99,15 +99,15 @@
                                         </td>
 
                                         <td class="product-price">
-                                            <span class="unit-amount">تومان {{$item->priceBook}}</span>
+                                            <span class="unit-amount">تومان {{number_format($item->priceBook)}}</span>
                                         </td>
 
                                         <td class="product-quantity">
                                             <input type="number" name="quantity[]" class="form-control"
-                                                   value="{{$item->amount}}">
+                                                   value="{{$item->amount}}" min="1">
                                         </td>
                                         <td class="product-subtotal">
-                                            <span class="subtotal-amount">تومان {{$item->totalPrice}}</span>
+                                            <span class="subtotal-amount">تومان {{number_format($item->totalPrice)}}</span>
                                         </td>
 
                                         <td class="product-remove">
@@ -138,15 +138,12 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="cart-totals">
                             <h3>مجموع سبد</h3>
-
                             <ul>
                                 <li>کل حجم: <span>تومان {{number_format($totalPrice)}}</span></li>
-                                <li>جمع: <span>تومان {{number_format($totalPrice)}}</span></li>
                             </ul>
-                            <a href="#" class="btn btn-primary">تایید کنید</a>
+                            <a href="{{route('CheckBasket')}}" class="btn btn-primary">افزودن آدرس</a>
                         </div>
                     </form>
                 </div>

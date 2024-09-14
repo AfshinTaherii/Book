@@ -127,4 +127,28 @@ class HomeController extends Controller
 
         return back()->with('success',true)->with('message','با موفقیت به روز رسانی شد');
     }
+
+    public function checkBasket()
+    {
+        $data = [];
+        $totalPrice = 0;
+        $pendingOrder = Order::query()->where('status', 'pending')->where('user_id', Auth::id())->first();
+        if ($pendingOrder){
+            $orders = OrderItem::query()->where('order_id', $pendingOrder->id)->get();
+            foreach ($orders as $idex=>$order) {
+                $product = Product::query()->find($order->product_id);
+                $result = (object)[
+                    'titleFa'=>$product->titleFa,
+                    'priceBook'=>$product->offPrice ? $product->offPrice : $product->priceBook,
+                    'amount'=>$order->quantity,
+                    'id'=>$order->id,
+                    'totalPrice'=>$order->price,
+                ];
+                $data[] = $result;
+                $totalPrice += $order->price;
+            }
+        }
+        return view('Front.pages.cart.check_cart',compact('data','totalPrice'));
+    }
+
 }

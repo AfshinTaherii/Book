@@ -43,7 +43,7 @@ class LoginController extends Controller
                     return Redirect::route('verify_phone_number');
                 } else {
                     Auth::loginUsingId($data[0]->id, true);
-                    return Redirect::route('index');
+                    return Redirect::route('home');
                 }
             }
         }

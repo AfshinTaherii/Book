@@ -75,8 +75,8 @@
     <!-- Start Startup Main Banner -->
     <div class="home-slides startup-home">
         @foreach($slider as $item)
-              <img src="{{$item->image}}" alt="image" style="width: 100%">
-            <div   class="main-banner ">
+            <img src="{{$item->image}}" alt="image" style="width: 100%">
+            <div class="main-banner ">
                 <div class="d-table">
                     <div class="d-table-cell">
                         <div class="container">
@@ -121,77 +121,94 @@
         </div>
         <!-- End Partner Area -->
 
-    <!-- Start Product Area -->
-    <section class="product-area ptb-100">
-        <div class="container">
-            <div class="section-title">
-                <h2>آخرین محصول ما</h2>
-                <div class="bar"></div>
-            </div>
+        <!-- Start Product Area -->
+        <section class="product-area ptb-100">
+            <div class="container">
+                <div class="section-title">
+                    <h2>آخرین محصول ما</h2>
+                    <div class="bar"></div>
+                </div>
 
-            <div class="row">
-                <div class="product-slides">
-                    @foreach($product as $item)
-                        <div class="col-lg-12">
-                            <div class="single-product">
-                                <div class="product-img">
-                                    <img src="{{$item->cover_image}}" alt="item">
+                <div class="row">
+                    <div class="product-slides">
+                        @foreach($product as $item)
+                            <div class="col-lg-12">
+                                <div class="single-product">
+                                    <div class="product-img">
+                                        <img src="{{$item->cover_image}}" alt="item">
 
-                                    <a href="{{ route('addToBasket',$item->id) }}" class="add-to-cart-btn" id="addToCartButton">افزودن به سبد خرید<i
-                                            class="icofont-shopping-cart"></i></a>
-                                </div>
+                                        <a href="{{ route('addToBasket',$item->id) }}" class="add-to-cart-btn"
+                                           id="addToCartButton">افزودن به سبد خرید<i
+                                                class="icofont-shopping-cart"></i></a>
+                                    </div>
 
-                                <div class="product-content">
-                                    <h3>
-                                        <a href="{{route('showProduct',$item->slug)}}">{{$item->titleFa}}</a>
-                                    </h3>
+                                    <div class="product-content">
+                                        <h3>
+                                            <a href="{{route('showProduct',$item->slug)}}">{{$item->titleFa}}</a>
+                                        </h3>
 
-                                    <div class="row h-100 justify-content-center align-items-center">
-                                        <div class="col-lg-5 col-6">
-                                            <h5>{{$item->offPrice}} <span>{{$item->priceBook}}</span></h5>
+                                        <div class="row h-100 justify-content-center align-items-center">
+                                            <div class="col-lg-5 col-6">
+                                                <h5>{{number_format($item->offPrice)}}<span>{{number_format($item->priceBook)}}</span></h5>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Product Area -->
-
-    <!-- Start Blog Area -->
-    <section class="blog-area ptb-100">
-        <div class="container">
-            <div class="section-title">
-                <h2>آخرین اخبار ما</h2>
-                <div class="bar"></div>
-            </div>
-
-            <div class="row">
-                <div class="blog-slides">
-                    @foreach($blog as $item)
-                    <div class="col-lg-12 col-md-12">
-                        <div class="single-blog-post">
-                            <a href="#" class="post-image"><img src="{{$item->image}}" alt="blog-image"></a>
-
-                            <div class="blog-post-content">
-                                <ul>
-                                    <li><i class="icofont-user-male"></i> <a href="#">ادمین</a></li>
-                                    <li><i class="icofont-wall-clock"></i>شهریور 1403</li>
-                                </ul>
-                                <h3><a href="#">{{$item->titleFa}}</a></h3>
-                                <p>{{$item->shortDescriptionFa}}</p>
-                                <a href="#" class="read-more-btn">ادامه مطلب <i
-                                        class="icofont-rounded-double-right"></i></a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
-                    @endforeach
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- End Blog Area -->
+        </section>
+        <!-- End Product Area -->
+
+        <!-- Start Blog Area -->
+        <section class="blog-area ptb-100">
+            <div class="container">
+                <div class="section-title">
+                    <h2>آخرین اخبار ما</h2>
+                    <div class="bar"></div>
+                </div>
+
+                <div class="row">
+                    <div class="blog-slides">
+                        @foreach($blog as $item)
+                            <div class="col-lg-12 col-md-12">
+                                <div class="single-blog-post">
+                                    <a href="{{route('detailBlog',$item->slug)}}" class="post-image"><img src="{{$item->image}}" alt="blog-image"></a>
+
+                                    <div class="blog-post-content">
+                                        <ul>
+                                            <li><i class="icofont-user-male"></i> <a href="#">ادمین</a></li>
+                                            <li><i class="icofont-wall-clock"></i>شهریور 1403</li>
+                                        </ul>
+                                        <h3><a href="#">{{$item->titleFa}}</a></h3>
+                                        <p>{{$item->shortDescriptionFa}}</p>
+                                        <a href="{{route('detailBlog',$item->slug)}}" class="read-more-btn">ادامه مطلب <i
+                                                class="icofont-rounded-double-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Blog Area -->
+
+        @stop
+        @section('script')
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.getElementById('addToCartButton').addEventListener('click', function() {
+                        Swal.fire({
+                            title: 'عملیات موفق',
+                            text: 'محصول با موفقیت به سبد خرید اضافه شد!',
+                            icon: 'success',
+                            confirmButtonText: 'باشه'
+                        });
+                    });
+                });
+            </script>
+
 @endsection

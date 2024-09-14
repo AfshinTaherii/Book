@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('family');
-            $table->string('phone')->unique();
+            $table->string('password');
+            $table->bigInteger('roleId')->unsigned()->default(1);
+            $table->string('mobile')->unique();
             $table->string('code')->default(0);
             $table->boolean('status')->default(false);
             $table->boolean('IsAdmin')->default(false);

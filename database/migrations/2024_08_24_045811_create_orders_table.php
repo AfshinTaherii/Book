@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->bigInteger('total_price');
             $table->string('status')->default('pending');
+            $table->text('address');
             $table->softDeletes();
             $table->timestamps();
         });

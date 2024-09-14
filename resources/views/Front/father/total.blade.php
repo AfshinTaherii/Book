@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="/Front/assets/css/style.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="/Front/assets/css/responsive.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
 
     <title>نمایشگاه کتاب</title>
 
@@ -42,7 +44,7 @@
     <div class="crake-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index-7.html"><img src="/Front/img/logo.png" alt="logo"></a>
+                <a class="navbar-brand" href="index-7.html"><img src="/Front/img/logo.png" alt="logo" style="width: 63px;height: 63px"></a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav nav ml-auto">
@@ -256,5 +258,8 @@
 <script src="/Front/assets/js/contact-form-script.js"></script>
 <!-- Main JS -->
 <script src="/Front/assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+@yield('style')
 @yield('script')
 </html>

@@ -33,4 +33,6 @@ class CartController extends Controller
         return back()->with('success', true)->with('message', 'سبد خرید شما با موفقیت ویرایش شد');
 
     }
+
+
 }

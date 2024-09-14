@@ -49,7 +49,8 @@ class EventsController extends Controller
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
 
-                $btn = '<a href="' . route('SeeRegisterEvent', $row->id) . '" class="alert"><i class="fa fa-eye"></i></i></a>';
+                $btn = '<a href="' . route('EventConfirm', $row->id) . '" class="success"><i class="fa fa-check"></i></i></a>
+<a href="' . route('SeeRegisterEvent', $row->id) . '" class="alert"><i class="fa fa-eye"></i></i></a>';
 
                 return $btn;
             })
@@ -63,6 +64,43 @@ class EventsController extends Controller
             'status' => 'confirmed'
         ]);
         return back()->with('success', true)->with('message', 'درخواست شما با موفقیت ثبت شد');
+    }
+
+
+    public function showEventConfirm()
+    {
+
+
+        $registers = Registrations::where('status', 'confirmed')->get();
+        $registerEvent = [];
+        foreach ($registers as $register) {
+            $EventData = Events::find($register->event_id);
+            $userData = User::find($register->user_id);
+            $date = Verta($register->created_at);
+            $result = (object)[
+                'id' => $register->id,
+                'status' => $register->status,
+                'phone' => $userData->phone,
+                'titleFa' => $EventData->titleFa,
+                'user' => $userData->name . ' ' . $userData->family,
+                'date' => "$date->year-$date->month-$date->day",
+            ];
+
+            array_push($registerEvent, $result);
+
+        }
+        return Datatables::of($registerEvent)
+            ->addIndexColumn()
+            ->addColumn('action', function ($row) {
+
+                $btn = '<a href="' . route('deleteEvent', $row->id) . '" class="danger"><i class="fa fa-trash"></i></a>
+<a href="' . route('updateEvent', $row->id) . '" class="success"><i class="fa fa-edit"></i></i></a>';
+
+                return $btn;
+            })
+            ->rawColumns(['action'])
+            ->make(true);
+
     }
 
     public function ajax()

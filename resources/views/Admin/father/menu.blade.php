@@ -137,6 +137,14 @@
                                 class="feather icon-circle"></i><span class="menu-item"
                                                                       data-i18n="Shop">نمایش رویداد</span></a>
                     </li>
+                    <li class="{{ Request::routeIs('EventPending') ? 'active' : '' }}"><a href="{{route('EventPending')}}"><i
+                                class="feather icon-circle"></i><span class="menu-item"
+                                                                      data-i18n="Shop">تایید نشده</span></a>
+                    </li>
+                    <li class="{{ Request::routeIs('ShowEventConfirm') ? 'active' : '' }}"><a href="{{route('ShowEventConfirm')}}"><i
+                                class="feather icon-circle"></i><span class="menu-item"
+                                                                      data-i18n="Shop">تایید شده</span></a>
+                    </li>
                 </ul>
             </li>
 

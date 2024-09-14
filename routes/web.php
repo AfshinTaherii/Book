@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Front\LoginController;
 use App\Http\Controllers\Front\RegisterController;
 use App\Http\Controllers\HomeController;
@@ -24,7 +25,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/addToBasket/{id}', [HomeController::class, 'addToBasket'])->name('addToBasket')->middleware('auth');
 Route::get('/productList/{slug}', [\App\Http\Controllers\Admin\CategoryController::class, 'productList'])->name('productList');
 Route::get('/showProduct/{slug}', [\App\Http\Controllers\Admin\CategoryController::class, 'showProduct'])->name('showProduct');
-//Route::get('/blogs/{slug}', [BlogController::class, 'blogs'])->name('blogs');
+Route::get('/detailBlog/{slug}', [BlogController::class, 'detailBlog'])->name('detailBlog');
 
 
 Auth::routes();
@@ -47,5 +48,6 @@ Route::group(['prefix' => 'basket','middleware' => ['auth']],function () {
     Route::get('/shopBasket', [HomeController::class, 'shopBasket'])->name('shopBasket');
     Route::get('/deleteCart/{id}', [HomeController::class, 'deleteCart'])->name('deleteCart');
     Route::post('/updateCart', [HomeController::class, 'updateCart'])->name('updateCart');
+    Route::get('/checkBasket', [HomeController::class, 'checkBasket'])->name('CheckBasket');
 
 });

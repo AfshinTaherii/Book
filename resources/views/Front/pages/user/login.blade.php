@@ -105,7 +105,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="شماره موبایل" name="email">
+                                    <input type="number" class="form-control" placeholder="شماره موبایل" name="mobile">
                                 </div>
                             </div>
                             <div class="col-lg-12">
